@@ -1,0 +1,48 @@
+
+.compact{
+	list-style-type: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.nav{
+	ul{
+		//Extend classes and rules into blocks.
+		@extend .compact;
+	}
+	//Don't get so specific. You just have to target the block that's in the nav. Not nessecarly
+	a {
+		display: block;
+		padding: 0.2em 0.5em;
+	}
+	&bar{
+		background-color: var(--color-gray-dark);
+		color: var(--color-gray-light);
+
+		line-height: var(--header-height);
+
+		h1{
+			margin: 0;
+			font-size: 1.2rem;
+			line-height: inherit;
+		}
+	}
+}
+
+.container{
+	max-width:map-get($breakpoints,'lg');
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.flex {
+	&-parent{ display: flex; }
+	&-child{ flex: 1 1 auto; }
+	&-none { flex:none; }
+	&-wrap { flex-wrap:wrap; }
+	&-vertical { flex-direction:column; }
+	&-align-center { align-items:center; }
+	&-justify-center { justify-content:center; }
+}
+

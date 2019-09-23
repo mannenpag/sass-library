@@ -1,0 +1,26 @@
+$color-main:#0ef;
+$color-main-dark:darken($color-main,30%);
+$color-body-text: #eee;
+
+
+//"List of strings" with our breakpoints
+$breakpoints:(
+	xs:0,
+	sm:500px,
+	md:800px,
+	lg:1000px,
+	xl:1200px,
+);
+
+$header-height: 3rem;
+
+:root {
+	--main-color:#{$color-main};
+	--main-color-dark:#{$color-main-dark};
+	--body-text-color:#{$color-body-text};
+
+	--color-gray-dark: #2e2b39;
+	--color-gray-light: #ede8ff;
+
+	--header-height: #{$header-height};
+}
