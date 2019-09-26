@@ -1,23 +1,27 @@
-$color-main:#0ef;
-$color-main-dark:darken($color-main,30%);
-$color-body-text: #eee;
-
-
+$color-main:#F8F7F4;
+$color-main-dark:darken($color-main,20%);
+$color-body-text: #F8F7F4;
+$color-body-background: #0F1313;
+ 
+ 
 //"List of strings" with our breakpoints
 $breakpoints:(
 	xs:0,
 	sm:500px,
 	md:800px,
 	lg:1000px,
-	xl:1200px,
+	xl:1440px,
 );
 
 $header-height: 3rem;
 
 :root {
 	--main-color:#{$color-main};
+	--border-color: 248, 247, 244;
 	--main-color-dark:#{$color-main-dark};
 	--body-text-color:#{$color-body-text};
+	--color-body-background:#{$color-body-background};
+
 
 	--color-gray-dark: #2e2b39;
 	--color-gray-light: #ede8ff;
