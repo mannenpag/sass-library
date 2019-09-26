@@ -10,6 +10,105 @@
 // The theme needs to be imported last. This overrides all the style desisions
 @import 'theme';
 
+// NEW CODE Sep 26
 
+body, html {
+  font-family: "Cera",sans-serif; }
+*,*:before,*:after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; 
+}
 
+@charset "UTF-8";
+@font-face {
+  font-family: "Cera";
+  src: url("../src/fonts/cera/Cera-Regular.woff") format("woff"), /* Legacy browsers */
+  url("../src/fonts/cera/Cera-Regular.ttf") format("truetype"); /* Android, iOS */
+  font-style: normal;
+  font-weight: 400; }
+@font-face {
+  font-family: "Cera";
+  src: url("../src/fonts/cera/Cera-Medium.woff") format("woff"),
+  url("../src/fonts/cera/Cera-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600; }
 
+body{
+	background-color: var(--color-body-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.button{
+	color: var(--body-text-color);
+}
+
+p{
+	line-height: 115%;
+}
+
+h1{
+	font-size: 6em;
+	line-height: 92%;
+}
+
+h2{
+	font-size: 3.25em;
+	line-height: 112%;
+}
+
+h3{
+	font-size: 2.375em;
+	line-height: 107%;
+}
+
+h4{
+	font-size: 2em;
+	line-height: 102%;
+}
+
+h5, .button{
+	font-size: 1.375em;
+	line-height: 105%;
+}
+
+.body-text{
+	&-lg{
+		font-size: 1.375em;
+		line-height: 115%;
+	}
+}
+
+h1,
+h2,
+h5{
+	font-family: Times New Roman, Times, Serif;
+	font-weight: normal;
+}
+
+h4{
+	font-family: "Cera";
+	font-weight: normal;
+}
+
+h3{
+	font-family: Times New Roman, Times, Serif;
+	font-weight: bold;
+}
+
+p{
+	font-family: "Cera";
+	font-weight: normal;
+}
+
+.button{
+	font-family: Times New Roman, Times, Serif;
+	font-weight: bold;
+	font-style: italic;
+}
