@@ -1,10 +1,11 @@
 $color-main:#F8F7F4;
+$color-main-yellow:#FFDCA7;
 $color-main-dark:darken($color-main,20%);
 $color-body-text: #F8F7F4;
 $color-body-background: #0F1313;
  
  
-//"List of strings" with our breakpoints
+//"List of strings
 $breakpoints:(
 	xs:0,
 	sm:500px,
@@ -13,10 +14,73 @@ $breakpoints:(
 	xl:1440px,
 );
 
+$spacers:(
+	l:3em,
+	m:2em,
+	s:1em,
+	n:0,
+);
+
+$columns: (
+	12:12,
+	10:10,
+	8:8,
+	6:6,
+	3:3,			
+);
+
+$positions: (
+	t:top,
+	r:right,
+	b:bottom,
+	l:left,			
+);
+
+$boxes: (
+	p:padding,
+	m:margin,		
+);
+
+$display: (
+	b:block,
+	i:inline,
+	inb:inline-block,
+	f:flex,
+	inf:inline-flex,		
+	n:none,
+);
+
+$alignment-vertical: (
+  t:top,
+  m:middle,
+  b:bottom,
+  bl:baseline,
+  tb:text-bottom
+);
+
+$alignment-horizontal: (
+  l:left,
+  c:center,
+  r:right,
+  j:justify
+);
+
+$positioning: (
+  s:static,
+  r:relative,
+  a:absolute,
+  f:fixed
+);
+
+
+
+$gap:map-get($spacers,'l');
+
 $header-height: 3rem;
 
 :root {
 	--main-color:#{$color-main};
+	--main-yellow:#{$color-main-yellow};
 	--border-color: 248, 247, 244;
 	--main-color-dark:#{$color-main-dark};
 	--body-text-color:#{$color-body-text};
