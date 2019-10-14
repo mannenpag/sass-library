@@ -59,7 +59,7 @@
 		}
 	}
 	@each $i,$v in $alignment-horizontal {
-		.align-#{$breakpoint}-#{$i} { text-align:$v; }
+		.align-text-#{$breakpoint}-#{$i} { text-align:$v; }
 	}
 	@each $i,$v in $alignment-vertical {
 		.align-#{$breakpoint}-#{$i} { vertical-align:$v; }
@@ -69,6 +69,12 @@
 	}
 	@each $i,$v in $positioning {
 		.position-#{$breakpoint}-#{$i} { position:$v; }
+	}
+	@each $i,$v in $zindex {
+		.zindex-#{$breakpoint}-#{$i} { z-index:$v; }
+	}
+	@each $i,$v in $maxwidths {
+		.max-#{$breakpoint}-#{$i} { max-width:$v; }
 	}
 }
 

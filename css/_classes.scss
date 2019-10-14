@@ -7,117 +7,21 @@
 }
 
 .nav{
-	position: fixed;
-	width: 100%;
-	position: fixed;
-    width: 100%;
-    top: 1em;
-    left: -1em;
 	ul{
-		//Extend classes and rules into blocks.
 		@extend .compact;
 	}
-	//Don't get so specific. You just have to target the block that's in the nav. Not nessecarly
 	a {
 		display: block;
 		padding: 0.2em 0.5em;
 		font-weight: normal;
+		cursor: pointer;
+		color: var(--color-body-background-light);
 		&:hover{
-			text-decoration: underline;
+			color: var(--color-body-background);
 		}
-	}
-	&bar{
-		color: var(--body-text-color);
-		line-height: var(--header-height);
 	}
 }
 
 .container{
 	margin: 0em auto;
-	@include breakpoint ('tablet') {
-		max-width: 80%;
-	}
 }
-
-.block{
-	margin: 3em auto; 
-	padding: 4em 0em;
-}
-
-.block-divider{
-	border-top: 1px solid rgba(var(--border-color), 0.25);
-	border-bottom: 1px solid rgba(var(--border-color), 0.25);
-}
-
-// .flex {
-// 	&-parent{ display: flex; }
-// 	&-child{ flex: 1 1 auto; }
-// 	&-none { flex:none; }
-// 	&-wrap { flex-wrap:wrap; }
-// 	&-column { flex-direction:column; }
-// 	&-row { flex-direction:column; }
-// 	&-align-center { align-items:center; }
-// 	&-justify-center { justify-content:center; }
-// 	&-justify-end { justify-content:flex-end; }
-// }
-
-.grid-child-align-bottom{
-	place-self: end center;
-}
-
-.grid-rows{
-	grid-template-rows: 80px 600px 60px 60px;
-}
-
-.row-align{
-	&-1{
-		grid-row: 1 / 4;
-	}
-	&-2{
-		grid-row: 2 / 4;
-	}
-	&-3{
-		grid-row: 3 / 4;
-	}
-}
-
-
-
-// NEW CODE Sep 26
-
-// @mixin display-grid {
-//   display: -ms-grid;
-//   display: grid;
-// }
-
-// @mixin grid-child ($col-start, $col-end, $row-start, $row-end) {
-//   -ms-grid-column: $col-start;
-//   -ms-grid-column-span: $col-end - $col-start;
-//   -ms-grid-row: $row-start;
-//   -ms-grid-row-span: $row-end - $row-start;
-//   grid-column: #{$col-start}/#{$col-end};
-//   grid-row: #{$row-start}/#{$row-end};
-// }
-
-
-// .grid {
-// 	&-parent{
-// 	 	@include display-grid;
-// 		grid-template-columns: repeat(12, minmax(90px, 1fr));
-// 		grid-gap: 20px;
-// 		margin-bottom: 20px;
-// 	}
-// 	&-child-1-5{
-// 		@include grid-child (1, 5, auto,auto);
-// 	}
-// 	&-child-7-10{
-// 		@include grid-child (7, 10, auto,auto);
-// 	}
-// 	&-child-10-12{
-// 		@include grid-child (10, 13, auto,auto);
-		
-// 	}
-// 	&-child-align-bottom{
-// 		place-self: end center;
-// 	}
-// }
