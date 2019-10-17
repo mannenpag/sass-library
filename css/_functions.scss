@@ -2,7 +2,6 @@
 	.grid {
 		display:grid;
 		grid-template-columns: repeat(map-get($columns,12), 1fr);
-
 		&.gap {
 			grid-gap:var(--gap-size);
 			--gap-size:#{map-get($spacers, 'm')};
@@ -93,8 +92,6 @@
 		&-#{$breakpoint}-justify-center { justify-content:center; }
 		&-#{$breakpoint}-justify-end { justify-content:flex-end; }
 		&-#{$breakpoint}-justify-even { justify-content: space-between; }
-
-
 	}
 	@for $i from 1 through 10 {
 		.order-#{$breakpoint}-#{$i} { order:$i; }
