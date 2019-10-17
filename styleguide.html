@@ -10,20 +10,71 @@
 		<header class="side">
 			<nav class="nav">
 				<ul>
-					<li><a href="#gridsystem" id="">Grid System</a></li>
+					<li>
+						<h5 class="p-xs-bs">
+							Grid System
+						</h5>
+					</li>
+					<li>
+						<ul>
+							<li><a href="#grid">Grid</a></li>
+							<li><a href="#responsivegrid">Responsive grid</a></li>
+							<li><a href="#offsetcolumns">Offset columns</a></li>
+							<li><a href="#gridgap">Grid gap</a></li>
+							<li><a href="#responsivecolumns">Responsive columns</a></li>
+							<li><a href="#responsiverows">Responsive rows</a></li>
+						</ul>
+					</li>
+					<li class="p-xs-tm">
+						<h5 class="p-xs-bs">
+							Flex
+						</h5>
+					</li>
+					<li>
+						<ul>
+							<li><a href="#flex">Flex</a></li>
+							<li><a href="#flexorder">Flex order</a></li>
+							<li><a href="#flexresponsive">Flex responsive</a></li>
+							<li><a href="#justifycontent">Justify content</a></li>
+							<li><a href="#flexwrap">Flex wrap</a></li>
+						</ul>
+					</li>
+					<li class="p-xs-tm">
+						<h5 class="p-xs-bs">
+							Utilities
+						</h5>
+					</li>
+					<li>
+						<ul>
+							<li><a href="#padding">Padding</a></li>
+							<li><a href="#margin">Margin</a></li>
+							<li><a href="#zindex">Z-index</a></li>
+							<li><a href="#poistion">Position</a></li>
+							<li><a href="#display">Display</a></li>
+							<li><a href="#maxwidth">Max-width</a></li>
+						</ul>
+					</li>
 				</ul>
+				<p class="copyright">&copy; Gustav Bodin</p>
 			</nav>
 		</header>
 		<main class="content p-xs-hl">
 			<section class="container p-xs-vl">
-				<h1>CSS Styleguide</h1>
+				<h2>CSS Styleguide</h2>
 				<div class="grid">
-					<p class="col-xs-12 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem amet nesciunt illum, deserunt, culpa mollitia nisi debitis ipsum sapiente facilis non soluta necessitatibus inventore deleniti id voluptatibus, quia ad. Officiis.</p>
+					<p class="col-xs-12 col-md-4">This is a CSS library made up of classes compiled from SASS mixins. The mixins work inside of the <span class="file-style">functions.scss</span> taking values from maps in <span class="file-style">variables.scss</span>. If the user wishes to have specific breakpoints, spacers or add values to their project, they would make changes in <span class="file-style">variables.scss</span>.
+					<br>
+					<br>
+					Applying the classes to the html tags gives the elements predefined values. The naming system: (<span class="class-style">"property shorthand"-breakpoint-value</span>), if no breakpoint is given to the class (<span class="class-style">"property shorthand"--value</span>) the class won't work responsively and use the same value for every screen size. Giving the class a breakpoint of "xs" means that it's working from a screen width of 0px.
+					</p>
 				</div>
 			</section>
-			<section class="container p-xs-vl" id="gridsystem">
-				<h3 class="p-xs-bs">Grid System</h3>
-				<p>Here is the grid system.</p>
+			<h2 class="p-xs-bs">Grid System</h2>
+			<section class="container p-xs-vl" id="grid">
+				<h3 class="p-xs-bs">Grid</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">By giving the parent element a class of <span class="class-style">grid</span> gives it a property of <span class="property-style">display: grid</span> and <span class="property-style">grid-template-columns: repeat(12, 1fr)</span>. The child element is given the class of <span class="class-style">col--(amount of columns to span)</span> and the property of <span class="property-style">grid-column-end: span (amount of columns to span)</span>, see the example below.</p>
+				</div>
 				<div class="grid">
 					<div class="col--6">
 						<div class="well">.col--6</div>
@@ -46,154 +97,196 @@
 				<pre>
 					<code class="language-markup">
 		                <script type="prism-html-markup">
-							<div class="grid">
-								<div class="col--4">
-									<div class="well">.col--4</div>
-								</div>
-								<div class="col--4">
-									<div class="well">.col--4</div>
-								</div>
-								<div class="col--4">
-									<div class="well">.col--4</div>
-								</div>
+						<div class="grid">
+							<div class="col--6">
+								<div class="well">.col--6</div>
 							</div>
+							<div class="col--6">
+								<div class="well">.col--6</div>
+							</div>
+						</div>
+						<div class="grid">
+							<div class="col--4">
+								<div class="well">.col--4</div>
+							</div>
+							<div class="col--4">
+								<div class="well">.col--4</div>
+							</div>
+							<div class="col--4">
+								<div class="well">.col--4</div>
+							</div>
+						</div>
 		                </script>
 	                </code>
 	            </pre>
 	        </section>
-			<section class="container p-xs-vl">
-				<h3 class="p-xs-bs">Responsive Grid</h3>
+			<section class="container p-xs-vl" id="responsivegrid">
+				<h3 class="p-xs-bs">Responsive grid</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Make the grid responsive by adding a breakpoint between the two hyphens. This adds the property to a media query with a <span class="property-style">min-width: (breakpoint)</span>.</p>
+				</div>
 				<div class="grid">
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-lg-3">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6.col-lg-3</div>
 					</div>
 				</div>
 				<pre>
 					<code class="language-markup">
 		                <script type="prism-html-markup">
-							<div class="grid">
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
-								<div class="col-xs-12 col-md-6 col-lg-3">
-									<div class="well">column</div>
-								</div>
+						<div class="grid">
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
 							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+						</div>
 		                </script>
 	                </code>
 	            </pre>
 			</section>
-			<section class="container p-xs-vl">
+			<section class="container p-xs-vl" id="offsetcolumns">
 				<h3 class="p-xs-bs">Offset columns in a grid</h3>
 				<div class="grid">
+					<p class="col-xs-12 col-md-6">Offsetting the columns to start at a desired part of If the default column count of 12 isn't desired, the user can responsively change the number of columns. Add the class row-(breakpoint)-(columns) to the parent element.the grid by adding the class of <span class="class-style">offset-(breakpoint)-(starting column)</span>.</p>
+				</div>
+				<div class="grid">
 					<div class="col--4 offset--9">
-						<div class="swell">offset--8</div>
+						<div class="swell">.col--4.offset--9</div>
 					</div>
 					
 					<div class="col--8">
-						<div class="swell">col--8</div>
+						<div class="swell">.col--8</div>
 					</div>
 					<div class="col--4">
-						<div class="well">col--4</div>
+						<div class="well">.col--4</div>
 					</div>
 					
 					<div class="col--4 offset--2">
-						<div class="swell">col--4</div>
+						<div class="swell">.col--4.offset--2</div>
 					</div>
 					<div class="col--4 offset--8">
-						<div class="well">col--4</div>
+						<div class="well">.col--4.offset--8</div>
 					</div>
 				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="grid">
+							<div class="col--4 offset--9">
+								<div class="swell">.col--4.offset--9</div>
+							</div>
+							
+							<div class="col--8">
+								<div class="swell">.col--8</div>
+							</div>
+							<div class="col--4">
+								<div class="well">.col--4</div>
+							</div>
+							
+							<div class="col--4 offset--2">
+								<div class="swell">.col--4.offset--2</div>
+							</div>
+							<div class="col--4 offset--8">
+								<div class="well">.col--4.offset--8</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
 			</section>
-			<section class="container p-xs-vl">
+			<section class="container p-xs-vl" id="gridgap">
 				<h3 class="p-xs-bs">Gap</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">An alternative to adding <span class="property-style">padding</span> to desired grid elements the user can add a class of <span class="class-style">gap</span> to the parent element.</p>
+				</div>
 				<div class="grid gap">
 					<div class="col-xs-12 col-md-6 col-lg-3">
 						<div class="well">column</div>
@@ -208,95 +301,658 @@
 						<div class="well">column</div>
 					</div>
 				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="grid gap">
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+							<div class="col-xs-12 col-md-6 col-lg-3">
+								<div class="well">column</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
 			</section>
-			<section class="container p-xs-vl">
-				<h3 class="p-xs-bs">Responsive Columns</h3>
+			<section class="container p-xs-vl" id="responsivecolumns">
+				<h3 class="p-xs-bs">Responsive gap</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Make the gaps responsive by adding a class of <span class="class-style">gap-(breakpoint)-(size)</span> to the parent element.</p>
+				</div>
 				<div class="grid gap gap-xs-s gap-md-l">
 					<div class="col-xs-12 col-md-6">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6</div>
 					</div>
 					<div class="col-xs-12 col-md-6">
-						<div class="well">column</div>
+						<div class="well">.col-xs-12.col-md-6</div>
 					</div>
 				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="grid gap gap-xs-s gap-md-l">
+							<div class="col-xs-12 col-md-6">
+								<div class="well">.col-xs-12.col-md-6</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="well">.col-xs-12.col-md-6</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="well">.col-xs-12.col-md-6</div>
+							</div>
+							<div class="col-xs-12 col-md-6">
+								<div class="well">.col-xs-12.col-md-6</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
 			</section>
-			<section class="container p-xs-vl">
-				<h3 class="p-xs-bs">Responsive Rows</h3>
+			<section class="container p-xs-vl" id="responsiverows">
+				<h3 class="p-xs-bs">Responsive columns</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">If the default column count of 12 isn't desired, the user can responsively change the number of columns. Add the class <span class="class-style">row-(breakpoint)-(columns)</span> to the parent element.</p>
+				</div>
 				<div class="grid gap row-xs-12 row-md-10">
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 					<div class="col-xs-6 col-md-2">
-						<div class="well">column</div>
+						<div class="well">.col-xs-6.col-md-2</div>
 					</div>
 				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="grid gap row-xs-12 row-md-10">
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+							<div class="col-xs-6 col-md-2">
+								<div class="well">.col-xs-6.col-md-2</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
 			</section>
-			<section class="container p-xs-vl">
-				<h3 class="p-xs-bs">Utilities</h3>
+			<h2 class="p-xs-bs">Flex Box</h2>
+			<section class="container p-xs-vl" id="flex">
+				<h3 class="p-xs-bs">Flex</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">To give the parent element the property of <span class="property-style">display: flex</span> simply add the class <span class="class-style">flex-(breakpoint)-parent</span>. To make the child boxes grow and shrink the entire width of the container add <span class="class-style">flex-(breakpoint)-child</span>.</p>	
+				</div>
+				<div class="flex-xs-parent">
+					<div class="flex-xs-child">
+						<div class="well">Not inline</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Not inline</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Not inline</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Not inline</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Not inline</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent">
+							<div class="flex-xs-child">
+								<div class="well">Not inline</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Not inline</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Not inline</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Not inline</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Not inline</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="flexorder">
+				<h3 class="p-xs-bs">Flex order</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Change the order of the boxes by adding the class <span class="class-style">order-(breakpoint)-(number)</span>.</p>	
+				</div>
+				<div class="flex-xs-parent">
+					<div class="flex-xs-child order-xs-2">
+						<div class="swell">2</div>
+					</div>
+					<div class="flex-xs-child order-xs-4">
+						<div class="swell">4</div>
+					</div>
+					<div class="flex-xs-child order-xs-3">
+						<div class="swell">3</div>
+					</div>
+					<div class="flex-xs-child order-xs-5">
+						<div class="swell">5</div>
+					</div>
+					<div class="flex-xs-child order-xs-1">
+						<div class="swell">1</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent">
+							<div class="flex-xs-child order-xs-2">
+								<div class="swell">2</div>
+							</div>
+							<div class="flex-xs-child order-xs-4">
+								<div class="swell">4</div>
+							</div>
+							<div class="flex-xs-child order-xs-3">
+								<div class="swell">3</div>
+							</div>
+							<div class="flex-xs-child order-xs-5">
+								<div class="swell">5</div>
+							</div>
+							<div class="flex-xs-child order-xs-1">
+								<div class="swell">1</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="flexresponsive">
+				<h3 class="p-xs-bs">Flex resopnsive</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">A flex grid makes itself better in a vertical layout on mobile. This is easily done by changing the property value on a certain breakpoint. This example makes the switch while the screen crosses the breakpoint large.</p>	
+				</div>
+				<div class="flex-xs-parent flex-xs-vertical flex-lg-horizontal">
+					<div class="flex-xs-child">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child">
+						<div class="well">Flex item</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent flex-xs-vertical flex-lg-horizontal">
+							<div class="flex-xs-child">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child">
+								<div class="well">Flex item</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="justifycontent">
+				<h3 class="p-xs-bs">Justify content</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">In this instance, we can switch the positioning of the flex items. Adding a new class with the structure <span class="class-style">flex-(breakpoint)-justify-(position)</span> substituting (position) with center, end or even. Adding no position justifies the item at the start of the parent.</p>	
+				</div>
+				<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-center">
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-center">
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+				<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-end p-xs-tl">
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-end p-xs-tl">
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+				<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-even p-xs-tl">
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child max-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent flex-xs-horizontal flex-xs-justify-even p-xs-tl">
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child max-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="flexwrap">
+				<h3 class="p-xs-bs">Flex wrap</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Simply make the items wrap  by adding the class <span class="class-style">flex-(breakpoint)-wrap</span>.</p>	
+				</div>
+				<div class="flex-xs-parent flex-xs-horizontal flex-xs-wrap">
+					<div class="flex-xs-child min-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child min-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child min-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child min-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+					<div class="flex-xs-child min-xs-flexitem">
+						<div class="well">Flex item</div>
+					</div>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="flex-xs-parent flex-xs-horizontal flex-xs-wrap">
+							<div class="flex-xs-child min-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child min-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child min-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child min-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+							<div class="flex-xs-child min-xs-flexitem">
+								<div class="well">Flex item</div>
+							</div>
+						</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<h2 class="p-xs-bs">Utilities</h2>
+			<section class="container p-xs-vl" id="padding">
+				<h3 class="p-xs-bs">Padding</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Padding is added to the element with the property shorthand "p". The shorthand is followed by the breakpoint, which side to display the padding and by the size of the padding.<br><br>
+					To specify on which side of the element the user wants padding<br>
+					t: top,<br>
+					b: bottom,<br>
+					l: left,<br>
+					r: right,<br>
+					h: (horizontal) left and right,<br>
+					v: (vertical) top and bottom,<br><br>
+					Adding no specific side gives the element padding all around the element.<br>
+					</p>	
+				</div>
 				<p class="p-xs-s p-md-m well">Hello I am text</p>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+		                <p class="p-xs-s p-md-m well">Hello I am text</p>
+						</script>
+	                </code>
+	            </pre>
+	            <p class="p-xs-hs p-md-vm well">Hello I am text</p>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+	            		<p class="p-xs-hs p-md-vm well">Hello I am text</p>
+						</script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="margin">
+				<h3 class="p-xs-bs">Margin</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Margin is added to the element with the property shorthand "m". The shorthand is followed by the breakpoint, which side to display the margin and by the size of the margin.<br><br>
+					To specify on which side of the element the user wants the margin<br>
+					t: top,<br>
+					b: bottom,<br>
+					l: left,<br>
+					r: right,<br>
+					h: (horizontal) left and right,<br>
+					v: (vertical) top and bottom,<br><br>
+					Adding no specific side gives the element margin all around the element.</p>	
+				</div>
+				<p class="m-xs-s m-md-m well">Hello I am text</p>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+		                <p class="m-xs-s m-md-m well">Hello I am text</p>
+						</script>
+	                </code>
+	            </pre>
+	            <p class="m-xs-hs m-md-hm well">Hello I am text</p>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+	            		<p class="m-xs-hs m-md-hm well">Hello I am text</p>
+						</script>
+	                </code>
+	            </pre>
+	            <p class="m-xs-hauto max-xs-flexitem well">Hello I am text</p>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+	            		<p class="m-xs-hauto max-xs-flexitem well">Hello I am text</p>
+						</script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="zindex">
+				<h3 class="p-xs-bs">Z-index</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">Z-index is given to the elements by adding the class <span class="class-style">zindex-(breakpoint)-(layer)</span>. The layers go from n, which is the base level and up to the last index of the map.</p>	
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+		                <div class="zindex--n">Base</div>
+						<div class="zindex--1">Layer 1</div>
+						<div class="zindex--2">Layer 2</div>
+						<div class="zindex--3">Layer 3</div>
+						<div class="zindex--4">Layer 4</div>
+						</script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="poistion">
+				<h3 class="p-xs-bs">Display</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">The <span class="property-style">display</span> property can also easily be changed with classes. See the example below.</p>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+		                <div class="display--i">display: inline</div>
+						<div class="display--b">display: block</div>
+						<div class="display--inb">display: inline-block</div>
+						<div class="display--f">display: flex</div>
+						<div class="display--inf">display: inline-flex;</div>
+						<div class="display--n">display: none;</div>
+
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="display">
+				<h3 class="p-xs-bs">Position</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">The same goes for the <span class="property-style">position</span> property.</p>
+				</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+		                <div class="position--n">position: none</div>
+						<div class="position--a">position: absolute</div>
+						<div class="position--s">position: static</div>
+						<div class="position--r">position: relative</div>
+						<div class="position--f">position: fixed;</div>
+		                </script>
+	                </code>
+	            </pre>
+			</section>
+			<section class="container p-xs-vl" id="maxwidth">
+				<h3 class="p-xs-bs">Max width</h3>
+				<div class="grid">
+					<p class="col-xs-12 col-md-6">The <span class="property-style">max-width</span> of the element can be applied like this:</p>	
+				</div>
+				<div class="max-xs-xl m-xs-hauto well">Max width 60% and margin auto</div>
+				<div class="max-xs-l well">Max width 70%</div>
+				<div class="max-xs-m well">Max width 80%</div>
+				<div class="max-xs-s well">Max width 90%</div>
+				<pre>
+					<code class="language-markup">
+		                <script type="prism-html-markup">
+						<div class="max-xs-xl m-xs-hauto well">Max width 60% and margin auto</div>
+						<div class="max-xs-l well">Max width 70%</div>
+						<div class="max-xs-m well">Max width 80%</div>
+						<div class="max-xs-s well">Max width 90%</div>
+		                </script>
+	                </code>
+	            </pre>
 			</section>
 		</main>
 	</body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
-
 </html>

@@ -21,6 +21,7 @@ p,
 
 p{
 	line-height: 115%;
+	font-family: "Helvetica", "Arial", sans-serif;
 }
 
 h1{
@@ -33,7 +34,7 @@ h1{
 }
 
 h2{
-	font-size: 1.375em;
+	font-size: 1.75em;
 	line-height: 105%;
 	@include breakpoint ('tablet') {
 		font-size: 3.25em;
@@ -59,8 +60,13 @@ h4, .button{
 	}
 }
 
-h5, a {
+h5 {
 	font-size: 1.375em;
+	line-height: 105%;
+}
+
+a {
+	font-size: 1.1em;
 	line-height: 105%;
 }
 
@@ -93,6 +99,17 @@ header {
 	@include breakpoint ('tablet') {
 		display: block;
 	}
+	nav {
+		padding-left: 2vw;
+		padding-top: 2em;
+		.copyright {
+			font-size: 1em;
+			position: absolute;
+			bottom: 2em;
+			font-family: "Helvetica", "Arial", sans-serif;
+		}
+	}
+
 }
 
 .well {
@@ -110,4 +127,19 @@ header {
 pre {
 	border: 1px solid #d4ccc5;
 	max-height: 25em;
+}
+
+.class-style {
+	color: #00aa06;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.file-style {
+	color: #dd4a68;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.property-style {
+	color: #07a;
+	font-family: "Helvetica", "Arial", sans-serif;
 }

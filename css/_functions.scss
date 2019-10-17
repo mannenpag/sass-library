@@ -76,6 +76,9 @@
 	@each $i,$v in $maxwidths {
 		.max-#{$breakpoint}-#{$i} { max-width:$v; }
 	}
+	@each $i,$v in $minwidths {
+		.min-#{$breakpoint}-#{$i} { min-width:$v; }
+	}
 }
 
 @mixin makeFlex($breakpoint:'') {
@@ -85,9 +88,12 @@
 		&-#{$breakpoint}-none { flex:none; }
 		&-#{$breakpoint}-wrap { flex-wrap:wrap; }
 		&-#{$breakpoint}-vertical { flex-direction:column; }
+		&-#{$breakpoint}-horizontal { flex-direction:row; }
 		&-#{$breakpoint}-align-center { align-items:center; }
 		&-#{$breakpoint}-justify-center { justify-content:center; }
 		&-#{$breakpoint}-justify-end { justify-content:flex-end; }
+		&-#{$breakpoint}-justify-even { justify-content: space-between; }
+
 
 	}
 	@for $i from 1 through 10 {

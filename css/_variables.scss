@@ -5,13 +5,11 @@ $color-body-text: #F8F7F4;
 $color-body-background: #0F1313;
 $color-body-background-light: lighten($color-body-background,30%);
 
-
 $color-main-yellow:#FFDCA7;
 $color-main-transition-yellow:#FF876C;
 $color-main-transition-red:#FF5C4F;
 $color-main-red:#FF3232;
 
- 
 //List of maps
 
 $breakpoints:(
@@ -29,6 +27,7 @@ $spacers:(
 	m:2em,
 	s:1em,
 	n:0,
+	auto:auto,
 );
 
 $columns: (
@@ -61,18 +60,25 @@ $display: (
 );
 
 $zindex: (	
-	n3:-30,
-	n2:-20,
-	n1:-10,
-	p0:0,
-	p1:10,
-	p2:20,
-	p3:30,
-	p4:40,
-	p5:50,
+	n:0,
+	1:10,
+	2:20,
+	3:30,
+	4:40,
+	5:50,
 );
 
 $maxwidths: (	
+	flexitem: 10%,
+	xl: 60%,
+	l: 70%,
+	m: 80%,
+	s: 90%,
+	xs: 100%,
+);
+
+$minwidths: (	
+	flexitem: 30%,
 	xl: 60%,
 	l: 70%,
 	m: 80%,
