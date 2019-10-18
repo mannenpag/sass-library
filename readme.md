@@ -10,3 +10,4 @@
 
 Generated classes cover     : grid, flex, margin, padding, z-index, position, display, max-width
 
+http://gustavbodin.com/aau/wnm499/midterm_styleguide/
