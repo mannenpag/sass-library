@@ -3,7 +3,7 @@
 This is a CSS library with classes compiled from SASS mixins.
 variables.scss contains all the values functions.scss takes the map values and generate classes for desired breakpoints. 
 
-##CREATOR
+## CREATOR
 
 2019 Gustav Bodin
 
