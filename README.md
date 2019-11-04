@@ -9,7 +9,7 @@ variables.scss contains all the values functions.scss takes the map values and g
 
 Academy of Art University 
 
-Instructor Hamilton Klein
+Instructor [Hamilton Klein] (https://github.com/bronkula)
 
 Generated classes cover     : grid, flex, margin, padding, z-index, position, display, max-width
 
